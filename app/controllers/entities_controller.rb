@@ -4,7 +4,7 @@ class EntitiesController < ApplicationController
  
   #show an entity
   def show
-    @entiry =Entity.find(params[:entity_id])
+    @entity=Entity.find_by(:entity_type=>params[:entity_type],:entity_id=>params[:entity_id])
     @entity.to_json
   end
   #create an entry
